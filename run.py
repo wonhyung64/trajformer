@@ -108,3 +108,4 @@ target_cols = ["label"]
 sample0 = df[df["id"] == "traj_0"][delta_cols].values
 sample1 = df[df["id"] == "traj_1"][delta_cols].values
 
+#TODO data loader with irregular length sequence
