@@ -109,3 +109,73 @@ sample0 = df[df["id"] == "traj_0"][delta_cols].values
 sample1 = df[df["id"] == "traj_1"][delta_cols].values
 
 #TODO data loader with irregular length sequence
+
+#%%
+import matplotlib.pyplot as plt
+traj = df[df["id"] ==  "traj_2"][["x", "y"]]
+plt.scatter(traj["x"], traj["y"])
+traj_scaled = 
+df["x"].max()
+df["x"].min()
+
+scaled_y = np.round((traj["y"] - traj["y"].min())/(traj["y"].max()-traj["y"].min()) * 223).astype(int)
+scaled_x = np.round((traj["x"] - traj["x"].min())/(traj["x"].max()-traj["x"].min()) * 223).astype(int)
+index = np.vstack([scaled_x, scaled_y]).T
+
+
+src = torch.ones(224, 224, 1, dtype=torch.float32)
+torch.zeros(224, 224, 1, dtype=torch.float32).scatter(0, torch.tensor(index), src)
+torch.zeros(224, 224, 1, dtype=torch.float32).scatter(0, torch.tensor(index), src)
+torch.
+plt.scatter(scaled_x, scaled_y)
+
+x = torch.zeros(2,2,1)
+index = torch.tensor([[0,1]])
+x.scatter(0, index, torch.ones_like(x))
+
+x = torch
+torch.zeros(1,2,3).scatter(0, torch.tensor([[[0,0], [1,1]]]),1.)
+torch.zeros(2,3).scatter(0, torch.tensor([[0], [1]]),1.)
+torch.zeros(2).scatter(0, torch.tensor([0]),1.)
+
+index
+index.shape
+a.shape
+a = torch.LongTensor([[[2, 1], [2, 2], [3, 3]]])
+K = 5
+a = torch.LongTensor([index])
+a.shape
+out = torch.zeros(a.size(0), 224, 224)
+out[torch.arange(out.size(0)).unsqueeze(1), a[:, :, 0], a[:, :, 1]] = 1.
+print(out)
+len(index)
+torch.sum(out)
+
+
+from torchvision.transforms.functional import to_pil_image
+to_pil_image(out.view(224, 224))
+
+
+ind= torch.tensor([[[1,3],
+                   [0,3],
+                   [1,2]],
+                   ])
+ind.shape
+base = torch.ones(1, 3, 4)
+base
+base.scatter_(2, ind, 0)
+base.shape
+
+index.shape
+src = torch.ones((2,5))
+index = torch.tensor([[0,1,2,0,0]])
+torch.zeros(3,5, dtype=src.dtype).scatter_add_(0, index, src)
+
+index
+index = np.unique(index, axis=0)
+torch.zeros((224,224))[index[:,0], index[:,1]]
+
+mask = hessian_mat.diagonal() == 0
+        hess_tmp = hessian_mat + torch.diag(mask) * 1e-5
+
+#%%
